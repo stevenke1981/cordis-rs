@@ -22,7 +22,7 @@ jobs:
             target: aarch64-apple-darwin
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: dtolnay/rust-toolchain@master
         with:
           toolchain: 1.97.1
@@ -31,7 +31,7 @@ jobs:
         shell: bash
         run: test -f Cargo.lock
       - run: cargo build --workspace --release --all-features --locked --target ${{ matrix.target }}
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v5
         with:
           name: cordis-rs-${{ matrix.target }}
           path: |

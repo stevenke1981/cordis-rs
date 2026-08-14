@@ -15,7 +15,7 @@ jobs:
         os: [ubuntu-latest, windows-latest, macos-latest]
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: dtolnay/rust-toolchain@master
         with:
           toolchain: 1.97.1
@@ -35,7 +35,7 @@ jobs:
         if: runner.os == 'Linux'
         run: python3 scripts/mcp_smoke.py target/release/cordis-mcp
       - name: Preserve generated lockfile and metadata
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: dependency-resolution-${{ matrix.os }}
           path: |
