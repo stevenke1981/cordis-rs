@@ -1,0 +1,52 @@
+{
+  "context": {
+    "stakes": "low",
+    "risk_score": 0.2,
+    "control_mode": "fast",
+    "authorization": {
+      "schema": "cordis.authorization.v1",
+      "status": "granted",
+      "basis": "repository owner approval for local verification",
+      "network_profile": "offline",
+      "allowed_actions": [
+        "read",
+        "verify"
+      ],
+      "denied_actions": [
+        "change"
+      ],
+      "allowed_tools": [
+        "cargo"
+      ],
+      "denied_tools": [],
+      "allowed_targets": [
+        "workspace"
+      ],
+      "denied_targets": [
+        "production"
+      ],
+      "grant_id": "grant-demo-1",
+      "approved_by": "owner",
+      "expires_at": "2099-12-31T23:59:59Z"
+    },
+    "approval_required": false,
+    "scope_in": [
+      "workspace"
+    ],
+    "scope_out": [
+      "production"
+    ]
+  },
+  "action": {
+    "action_class": "research",
+    "action_name": "research",
+    "description": "fetch dependency",
+    "purpose": "test network gate",
+    "tool": "cargo",
+    "target": "workspace",
+    "network_access": true,
+    "destructive": false,
+    "approval_granted": false
+  },
+  "expected_allowed": false
+}

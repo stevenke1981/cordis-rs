@@ -1,0 +1,5 @@
+{
+  "workflow_id": "workflow:rust-demo",
+  "outcome": "success",
+  "lesson": "The durable workflow completed with acceptance-bound evidence."
+}

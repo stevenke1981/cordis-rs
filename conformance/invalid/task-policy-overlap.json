@@ -1,0 +1,68 @@
+{
+  "schema": "cordis.task.v1",
+  "task_id": "task-invalid-policy-overlap",
+  "goal": "Verify the Rust workspace",
+  "project_id": "cordis-rs",
+  "domain": "software",
+  "stakes": "low",
+  "stakeholders": [
+    "maintainer"
+  ],
+  "motivation": "Prove the aligned implementation with observable evidence.",
+  "scope": {
+    "in": [
+      "workspace"
+    ],
+    "out": [
+      "production"
+    ]
+  },
+  "authorization": {
+    "schema": "cordis.authorization.v1",
+    "status": "granted",
+    "basis": "repository owner approval for local verification",
+    "network_profile": "offline",
+    "allowed_actions": [
+      "verify"
+    ],
+    "denied_actions": [
+      "VERIFY"
+    ],
+    "allowed_tools": [
+      "cargo"
+    ],
+    "denied_tools": [],
+    "allowed_targets": [
+      "workspace"
+    ],
+    "denied_targets": [
+      "production"
+    ],
+    "grant_id": "grant-demo-1",
+    "approved_by": "owner",
+    "expires_at": "2099-12-31T23:59:59Z"
+  },
+  "constraints": [
+    "Do not access the network."
+  ],
+  "acceptance_evidence": [
+    {
+      "id": "workspace-tests",
+      "description": "Workspace tests pass",
+      "required": true
+    }
+  ],
+  "known_facts": [
+    {
+      "claim": "The workspace is local",
+      "evidence_ids": [
+        "repo-tree"
+      ]
+    }
+  ],
+  "unknowns": [],
+  "completeness": {
+    "score": 1.0,
+    "blocking_gaps": []
+  }
+}

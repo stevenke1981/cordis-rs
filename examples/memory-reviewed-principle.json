@@ -1,0 +1,16 @@
+{
+  "kind": "principle",
+  "subject": "verification discipline",
+  "content": "Run observable verification before declaring completion.",
+  "scope": "project",
+  "project_id": "cordis-rs-demo",
+  "source_id": "review-1",
+  "evidence": {
+    "reviewed_by": "maintainer"
+  },
+  "confidence": 0.9,
+  "metadata": {},
+  "status": "active",
+  "trust": "reviewed",
+  "instruction_safe": true
+}

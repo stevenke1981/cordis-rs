@@ -1,0 +1,116 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cordis.local/schemas/cordis.memory-item.v1.schema.json",
+  "title": "CORDIS Memory Item v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "scope",
+    "kind",
+    "subject",
+    "content",
+    "confidence",
+    "status",
+    "trust",
+    "instruction_safe"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "scope": {
+      "enum": [
+        "conversation",
+        "workflow",
+        "project",
+        "global"
+      ]
+    },
+    "project_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "conversation_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "task_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "kind": {
+      "enum": [
+        "event",
+        "episode",
+        "knowledge",
+        "pattern",
+        "capability",
+        "principle"
+      ]
+    },
+    "subject": {
+      "type": "string",
+      "minLength": 1
+    },
+    "content": {
+      "type": "string",
+      "minLength": 1
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "source_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "status": {
+      "enum": [
+        "active",
+        "candidate",
+        "retired",
+        "quarantined"
+      ]
+    },
+    "trust": {
+      "enum": [
+        "untrusted",
+        "observed",
+        "reviewed"
+      ]
+    },
+    "instruction_safe": {
+      "type": "boolean"
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "last_verified_at": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "metadata": {
+      "type": "object"
+    },
+    "relevance": {
+      "type": [
+        "number",
+        "null"
+      ]
+    }
+  }
+}

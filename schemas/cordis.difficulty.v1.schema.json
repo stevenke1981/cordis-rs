@@ -1,0 +1,200 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cordis.local/schemas/cordis.difficulty.v1.schema.json",
+  "title": "CORDIS Difficulty Profile v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "components",
+    "control_mode",
+    "policy_reasons"
+  ],
+  "properties": {
+    "schema": {
+      "const": "cordis.difficulty.v1"
+    },
+    "components": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "complexity",
+        "uncertainty",
+        "impact",
+        "irreversibility",
+        "novelty",
+        "evidence_deficit"
+      ],
+      "properties": {
+        "complexity": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "score",
+            "reasons"
+          ],
+          "properties": {
+            "score": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "reasons": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        },
+        "uncertainty": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "score",
+            "reasons"
+          ],
+          "properties": {
+            "score": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "reasons": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        },
+        "impact": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "score",
+            "reasons"
+          ],
+          "properties": {
+            "score": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "reasons": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        },
+        "irreversibility": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "score",
+            "reasons"
+          ],
+          "properties": {
+            "score": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "reasons": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        },
+        "novelty": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "score",
+            "reasons"
+          ],
+          "properties": {
+            "score": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "reasons": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        },
+        "evidence_deficit": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "score",
+            "reasons"
+          ],
+          "properties": {
+            "score": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "reasons": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        }
+      }
+    },
+    "control_mode": {
+      "enum": [
+        "fast",
+        "advisory",
+        "high_intervention",
+        "takeover"
+      ]
+    },
+    "override_reason": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "aggregate_score": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 1
+    },
+    "policy_reasons": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "maxItems": 100
+    }
+  }
+}

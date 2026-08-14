@@ -1,0 +1,5 @@
+CORDIS Rust is a clean-room Rust reimplementation aligned to CORDIS v0.5.1
+(commit e701869a32c53388db07f06c6ec15baa07167555), which is distributed under
+the MIT License. The Rust implementation keeps the public cordis.*.v1 JSON
+contract family while tightening authorization, transaction, memory-trust and
+workflow invariants. It is not an official release of the upstream project.

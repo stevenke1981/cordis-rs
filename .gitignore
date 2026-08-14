@@ -1,0 +1,17 @@
+/target/
+/.cordis/
+/.opencode/
+*.db
+*.db-shm
+*.db-wal
+*.tmp
+.DS_Store
+.idea/
+.vscode/
+.env
+
+/STATIC_AUDIT_REPORT.json
+/dist/
+
+__pycache__/
+*.py[cod]

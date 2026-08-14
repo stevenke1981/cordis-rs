@@ -1,0 +1,16 @@
+{
+  "schema": "cordis.conformance-manifest.v1",
+  "cases": [
+    {"path": "valid/task-authorized.json", "kind": "task", "expected": "valid"},
+    {"path": "invalid/task-granted-no-basis.json", "kind": "task", "expected": "invalid", "reason": "granted authorization requires basis"},
+    {"path": "invalid/task-policy-overlap.json", "kind": "task", "expected": "invalid", "reason": "allowed and denied overlap"},
+    {"path": "valid/plan-sequential.json", "kind": "plan", "expected": "valid"},
+    {"path": "invalid/plan-cycle.json", "kind": "plan", "expected": "invalid", "reason": "dependency cycle"},
+    {"path": "invalid/plan-parallel-runtime.json", "kind": "runtime-plan", "expected": "invalid", "reason": "alpha runtime requires sequential path"},
+    {"path": "valid/step-result-success.json", "kind": "step-result", "expected": "valid"},
+    {"path": "invalid/step-result-missing-evidence.json", "kind": "step-result", "expected": "invalid", "reason": "evidence is required"},
+    {"path": "policy/pending-high-risk-denied.json", "kind": "policy", "expected": "denied"},
+    {"path": "policy/granted-bounded-allowed.json", "kind": "policy", "expected": "allowed"},
+    {"path": "policy/offline-network-denied.json", "kind": "policy", "expected": "denied"}
+  ]
+}

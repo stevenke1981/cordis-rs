@@ -1,0 +1,38 @@
+{
+  "context": {
+    "stakes": "high",
+    "risk_score": 0.7,
+    "control_mode": "high_intervention",
+    "authorization": {
+      "schema": "cordis.authorization.v1",
+      "status": "pending",
+      "basis": "",
+      "network_profile": "offline",
+      "allowed_actions": [],
+      "denied_actions": [],
+      "allowed_tools": [],
+      "denied_tools": [],
+      "allowed_targets": [],
+      "denied_targets": []
+    },
+    "approval_required": false,
+    "scope_in": [
+      "workspace"
+    ],
+    "scope_out": [
+      "production"
+    ]
+  },
+  "action": {
+    "action_class": "verify",
+    "action_name": "verify",
+    "description": "verify workspace",
+    "purpose": "test",
+    "tool": "cargo",
+    "target": "workspace",
+    "network_access": false,
+    "destructive": false,
+    "approval_granted": false
+  },
+  "expected_allowed": false
+}

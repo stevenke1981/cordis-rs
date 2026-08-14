@@ -1,0 +1,58 @@
+{
+  "schema": "cordis.plan.v1",
+  "plan_id": "plan-conformance-1",
+  "version": 1,
+  "task_id": "task-conformance-1",
+  "workflow_id": "workflow:task-conformance-1",
+  "goal": "Verify the Rust workspace",
+  "assumptions": [],
+  "alternatives_considered": [
+    "static audit only"
+  ],
+  "steps": [
+    {
+      "id": "S1",
+      "objective": "Run the workspace test suite",
+      "depends_on": [],
+      "allowed_scope": [
+        "workspace"
+      ],
+      "action_class": "verify",
+      "method": {
+        "recommended": "cargo_test",
+        "alternatives": [
+          "nextest"
+        ]
+      },
+      "tool_policy": {
+        "recommended": [
+          "cargo"
+        ],
+        "allowed": [
+          "cargo"
+        ],
+        "forbidden": []
+      },
+      "model_requirements": {
+        "reasoning": 0.1,
+        "coding": 0.0,
+        "tool_use": 0.1,
+        "context_capacity": 0.0,
+        "review": 0.1
+      },
+      "required_evidence": [
+        "cargo test --workspace passed"
+      ],
+      "approval_required": false,
+      "retry_limit": 1,
+      "stop_when": [
+        "compilation fails"
+      ],
+      "on_success": "finish",
+      "on_failure": "block"
+    }
+  ],
+  "completion_gate": [
+    "Workspace tests pass"
+  ]
+}

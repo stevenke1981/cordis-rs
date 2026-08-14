@@ -1,0 +1,22 @@
+[package]
+name = "cordis-core"
+description = "Persistent evidence-to-learning cognitive core for CORDIS Rust."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+
+[dependencies]
+cordis-contracts = { path = "../cordis-contracts" }
+cordis-store = { path = "../cordis-store" }
+serde.workspace = true
+serde_json.workspace = true
+thiserror.workspace = true
+rusqlite.workspace = true
+
+[dev-dependencies]
+tempfile.workspace = true
+pretty_assertions.workspace = true
+
+[lints]
+workspace = true

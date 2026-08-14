@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cordis.local/schemas/cordis.evidence.v1.schema.json",
+  "title": "CORDIS Evidence",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "kind",
+    "summary",
+    "passed"
+  ],
+  "properties": {
+    "id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "kind": {
+      "type": "string",
+      "minLength": 1
+    },
+    "summary": {
+      "type": "string",
+      "minLength": 1
+    },
+    "passed": {
+      "type": "boolean"
+    },
+    "uri": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "acceptance_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "source_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "trust": {
+      "enum": [
+        "untrusted",
+        "observed",
+        "reviewed"
+      ],
+      "default": "observed"
+    }
+  }
+}

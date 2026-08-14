@@ -1,0 +1,43 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@master
+        with:
+          toolchain: 1.97.1
+          components: rustfmt, clippy
+      - uses: Swatinem/rust-cache@v2
+      - name: Resolve dependency lock
+        run: cargo generate-lockfile
+      - name: Verify locked metadata
+        run: cargo metadata --locked --format-version 1 > cargo-metadata.json
+      - run: cargo fmt --all -- --check
+      - run: cargo clippy --workspace --all-targets --all-features -- -D warnings
+      - run: cargo test --workspace --all-features --locked
+      - run: cargo build --workspace --release --all-features --locked
+      - name: Static source audit
+        run: python3 scripts/static_audit.py
+      - name: MCP smoke test
+        if: runner.os == 'Linux'
+        run: python3 scripts/mcp_smoke.py target/release/cordis-mcp
+      - name: Preserve generated lockfile and metadata
+        uses: actions/upload-artifact@v4
+        with:
+          name: dependency-resolution-${{ matrix.os }}
+          path: |
+            Cargo.lock
+            cargo-metadata.json

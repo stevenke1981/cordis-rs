@@ -1,0 +1,20 @@
+{
+  "schema": "cordis.step-result.v1",
+  "task_id": "task-conformance-1",
+  "plan_id": "plan-conformance-1",
+  "plan_version": 1,
+  "step_id": "S1",
+  "status": "success",
+  "actions": [
+    "Ran cargo test --workspace"
+  ],
+  "observations": [
+    "All workspace tests passed"
+  ],
+  "artifacts": [
+    "artifact://cargo-test.log"
+  ],
+  "evidence": [],
+  "errors": [],
+  "proposed_next": null
+}

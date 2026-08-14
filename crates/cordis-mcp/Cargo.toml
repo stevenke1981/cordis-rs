@@ -1,0 +1,32 @@
+[package]
+name = "cordis-mcp"
+description = "Native stdio MCP server for CORDIS Rust with legacy and 2026-07-28 discovery support."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+
+[dependencies]
+cordis-sdk = { path = "../cordis-sdk" }
+cordis-contracts = { path = "../cordis-contracts" }
+cordis-runtime = { path = "../cordis-runtime" }
+cordis-policy = { path = "../cordis-policy" }
+cordis-core = { path = "../cordis-core" }
+cordis-memory = { path = "../cordis-memory" }
+cordis-planner = { path = "../cordis-planner" }
+cordis-socrates = { path = "../cordis-socrates" }
+cordis-capability = { path = "../cordis-capability" }
+clap.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+thiserror.workspace = true
+
+[dev-dependencies]
+tempfile.workspace = true
+
+[[bin]]
+name = "cordis-mcp"
+path = "src/main.rs"
+
+[lints]
+workspace = true

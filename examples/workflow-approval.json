@@ -1,0 +1,6 @@
+{
+  "workflow_id": "workflow:rust-demo",
+  "step_id": "S1",
+  "approved_by": "maintainer",
+  "reason": "Example step reviewed"
+}

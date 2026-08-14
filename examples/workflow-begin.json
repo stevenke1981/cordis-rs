@@ -1,0 +1,72 @@
+{
+  "task_id": "rust-demo",
+  "goal": "Verify the Rust implementation workflow",
+  "project_id": "cordis-rs-demo",
+  "domain": "software",
+  "stakes": "low",
+  "stakeholders": [
+    "maintainer"
+  ],
+  "motivation": "Demonstrate the durable evidence-bound workflow.",
+  "scope_in": [
+    "workspace"
+  ],
+  "scope_out": [
+    "production"
+  ],
+  "authorization": {
+    "schema": "cordis.authorization.v1",
+    "status": "granted",
+    "basis": "repository owner approval for local verification",
+    "network_profile": "offline",
+    "allowed_actions": [
+      "read",
+      "verify"
+    ],
+    "denied_actions": [
+      "change"
+    ],
+    "allowed_tools": [
+      "cargo"
+    ],
+    "denied_tools": [],
+    "allowed_targets": [
+      "workspace"
+    ],
+    "denied_targets": [
+      "production"
+    ],
+    "grant_id": "grant-demo-1",
+    "approved_by": "owner",
+    "expires_at": "2099-12-31T23:59:59Z"
+  },
+  "constraints": [
+    "No network access."
+  ],
+  "acceptance_evidence": [
+    {
+      "id": "workflow-verified",
+      "description": "Workflow verification passes",
+      "required": true
+    }
+  ],
+  "known_facts": [
+    {
+      "claim": "The verification is local",
+      "evidence_ids": [
+        "example-fixture"
+      ]
+    }
+  ],
+  "unknowns": [],
+  "completeness": {
+    "score": 1.0,
+    "blocking_gaps": []
+  },
+  "difficulty": {
+    "complexity": 0.2,
+    "irreversibility": 0.0,
+    "novelty": 0.1,
+    "novelty_reason": "documented example"
+  }
+}

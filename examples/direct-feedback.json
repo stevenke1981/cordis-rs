@@ -1,0 +1,15 @@
+{
+  "task_id": "direct-demo-task",
+  "outcome": "success",
+  "lesson": "Local verification completed with observable evidence.",
+  "evidence": [
+    {
+      "kind": "test",
+      "summary": "Direct verification passes",
+      "passed": true,
+      "acceptance_id": "direct-verified",
+      "source_id": "local-run-1",
+      "trust": "observed"
+    }
+  ]
+}

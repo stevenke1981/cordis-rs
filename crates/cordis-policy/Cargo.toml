@@ -1,0 +1,19 @@
+[package]
+name = "cordis-policy"
+description = "Fail-closed authorization, scope, tool, target and approval policy engine for CORDIS."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+
+[dependencies]
+cordis-contracts = { path = "../cordis-contracts" }
+serde.workspace = true
+serde_json.workspace = true
+thiserror.workspace = true
+
+[dev-dependencies]
+pretty_assertions.workspace = true
+
+[lints]
+workspace = true

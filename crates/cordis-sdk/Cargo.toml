@@ -1,0 +1,28 @@
+[package]
+name = "cordis-sdk"
+description = "High-level embeddable Rust SDK and service composition for CORDIS."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+
+[dependencies]
+cordis-contracts = { path = "../cordis-contracts" }
+cordis-store = { path = "../cordis-store" }
+cordis-core = { path = "../cordis-core" }
+cordis-memory = { path = "../cordis-memory" }
+cordis-policy = { path = "../cordis-policy" }
+cordis-runtime = { path = "../cordis-runtime" }
+cordis-planner = { path = "../cordis-planner" }
+cordis-socrates = { path = "../cordis-socrates" }
+cordis-capability = { path = "../cordis-capability" }
+serde.workspace = true
+serde_json.workspace = true
+thiserror.workspace = true
+rusqlite.workspace = true
+
+[dev-dependencies]
+tempfile.workspace = true
+
+[lints]
+workspace = true

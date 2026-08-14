@@ -1,0 +1,131 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cordis.local/schemas/cordis.authorization.v1.schema.json",
+  "title": "CORDIS Authorization v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "status",
+    "basis",
+    "network_profile",
+    "allowed_actions",
+    "denied_actions",
+    "allowed_tools",
+    "denied_tools",
+    "allowed_targets",
+    "denied_targets"
+  ],
+  "properties": {
+    "schema": {
+      "const": "cordis.authorization.v1"
+    },
+    "status": {
+      "enum": [
+        "pending",
+        "granted",
+        "denied"
+      ]
+    },
+    "basis": {
+      "type": "string",
+      "maxLength": 1000
+    },
+    "network_profile": {
+      "enum": [
+        "offline",
+        "read_only",
+        "authorized_targets_only",
+        "unrestricted"
+      ]
+    },
+    "allowed_actions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "maxItems": 100
+    },
+    "denied_actions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "maxItems": 100
+    },
+    "allowed_tools": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "maxItems": 100
+    },
+    "denied_tools": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "maxItems": 100
+    },
+    "allowed_targets": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "maxItems": 100
+    },
+    "denied_targets": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "maxItems": 100
+    },
+    "grant_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 200
+    },
+    "approved_by": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 200
+    },
+    "expires_at": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 100,
+      "pattern": "^\\d{4}-(0[1-9]|1[0-2])-([0-2]\\d|3[01])T([01]\\d|2[0-3]):[0-5]\\d:[0-5]\\dZ$"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "granted"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "basis": {
+            "minLength": 1
+          }
+        }
+      }
+    }
+  ]
+}

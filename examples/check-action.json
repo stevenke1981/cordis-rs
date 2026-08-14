@@ -1,0 +1,12 @@
+{
+  "task_id": "direct-demo-task",
+  "description": "Run local workspace verification",
+  "purpose": "Prove the direct task acceptance criterion",
+  "action_class": "verify",
+  "action_name": "verify",
+  "tool": "cargo",
+  "target": "workspace",
+  "network_access": false,
+  "destructive": false,
+  "approval_granted": false
+}

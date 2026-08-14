@@ -1,0 +1,39 @@
+{
+  "goal": "Verify a direct CORDIS Rust task",
+  "project_id": "cordis-rs-demo",
+  "domain": "software",
+  "strategy_id": "verify_first",
+  "stakes": "low",
+  "complexity": 0.15,
+  "task_id": "direct-demo-task",
+  "current_step": "Run a local verification",
+  "constraints": [
+    "Do not use the network."
+  ],
+  "acceptance_evidence": [
+    {
+      "id": "direct-verified",
+      "description": "Direct verification passes",
+      "required": true
+    }
+  ],
+  "unknowns": [],
+  "authorization": {
+    "schema": "cordis.authorization.v1",
+    "status": "pending",
+    "basis": "",
+    "network_profile": "offline",
+    "allowed_actions": [],
+    "denied_actions": [],
+    "allowed_tools": [],
+    "denied_tools": [],
+    "allowed_targets": [],
+    "denied_targets": []
+  },
+  "scope_in": [
+    "workspace"
+  ],
+  "scope_out": [
+    "production"
+  ]
+}

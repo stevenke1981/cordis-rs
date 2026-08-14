@@ -1,0 +1,24 @@
+{
+  "candidates": {
+    "git": {
+      "command": "git",
+      "version_args": [
+        "--version"
+      ],
+      "capabilities": [
+        "version-control"
+      ],
+      "scope": "project"
+    },
+    "cargo": {
+      "command": "cargo",
+      "version_args": [
+        "--version"
+      ],
+      "capabilities": [
+        "rust-build"
+      ],
+      "scope": "project"
+    }
+  }
+}
